@@ -1,11 +1,11 @@
 package org.nadim.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -43,5 +43,11 @@ public class CalculatorControllerTest {
 		
 		//3. verify our result
 		assertEquals(expectedResult, actualResult);
+	}
+	
+	@AfterEach
+	void cleanUp() {
+		service = null;
+		controller  = null;
 	}
 }
